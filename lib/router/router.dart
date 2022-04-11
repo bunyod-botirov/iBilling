@@ -7,7 +7,7 @@ class AppRouter {
     switch (settings.name) {
       case "/bottom_navbar":
         return MaterialPageRoute(
-          builder: (context) =>  BottomNavBar(),
+          builder: (context) => const BottomNavBar(),
         );
     }
 

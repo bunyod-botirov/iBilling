@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ibilling/core/components/text_style_comp.dart';
 import 'package:ibilling/core/constants/colors_constant.dart';
 import 'package:ibilling/core/constants/size_constant.dart';
-import 'package:ibilling/screens/history_page.dart';
+import 'package:ibilling/screens/single_page.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class BottomNavBar extends StatelessWidget {
     SizeConst().init(context);
 
     return Scaffold(
-      body: HistoryPage(),
+      body: const SinglePage(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,

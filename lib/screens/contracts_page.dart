@@ -102,13 +102,9 @@ class ContractsPage extends StatelessWidget {
                             style: TextStyleComp.mediumStyle(14),
                           ),
                           SizeConst.horizontalBox(8),
-                          const Text(
+                          Text(
                             "Bunyod Botirov",
-                            style: TextStyle(
-                              color: Color(0xFF999999),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style: TextStyleComp.regularStyleGrey(14),
                           ),
                         ],
                       ),
@@ -119,13 +115,9 @@ class ContractsPage extends StatelessWidget {
                             style: TextStyleComp.mediumStyle(14),
                           ),
                           SizeConst.horizontalBox(8),
-                          const Text(
+                          Text(
                             "1,200,000 UZS",
-                            style: TextStyle(
-                              color: Color(0xFF999999),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style: TextStyleComp.regularStyleGrey(14),
                           ),
                         ],
                       ),
@@ -136,13 +128,9 @@ class ContractsPage extends StatelessWidget {
                             style: TextStyleComp.mediumStyle(14),
                           ),
                           SizeConst.horizontalBox(8),
-                          const Text(
+                          Text(
                             "№ 156",
-                            style: TextStyle(
-                              color: Color(0xFF999999),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style: TextStyleComp.regularStyleGrey(14),
                           ),
                         ],
                       ),
@@ -153,22 +141,14 @@ class ContractsPage extends StatelessWidget {
                             style: TextStyleComp.mediumStyle(14),
                           ),
                           SizeConst.horizontalBox(8),
-                          const Text(
+                          Text(
                             "6",
-                            style: TextStyle(
-                              color: Color(0xFF999999),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style: TextStyleComp.regularStyleGrey(14),
                           ),
                           const Spacer(),
-                          const Text(
+                          Text(
                             "31.01.2021",
-                            style: TextStyle(
-                              color: Color(0xFF999999),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: TextStyleComp.boldStyleGrey(14),
                           ),
                         ],
                       ),

@@ -25,4 +25,29 @@ class TextStyleComp {
       fontWeight: FontWeight.w700,
     );
   }
+
+  static TextStyle regularStyleGrey(double size) {
+    return TextStyle(
+      // overflow: TextOverflow.ellipsis,
+      color: ColorsConst.grey,
+      fontSize: size,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle mediumStyleGrey(double size) {
+    return TextStyle(
+      color: ColorsConst.grey,
+      fontSize: size,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle boldStyleGrey(double size) {
+    return TextStyle(
+      color: ColorsConst.grey,
+      fontSize: size,
+      fontWeight: FontWeight.w700,
+    );
+  }
 }
