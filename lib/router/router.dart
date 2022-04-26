@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ibilling/screens/bottom_navbar.dart';
+import 'package:ibilling/screens/bottom_navbar/bottom_navbar_view.dart';
 
 class AppRouter {
   static Route? onGenerateRoute(RouteSettings settings) {

@@ -28,7 +28,7 @@ class TextStyleComp {
 
   static TextStyle regularStyleGrey(double size) {
     return TextStyle(
-      // overflow: TextOverflow.ellipsis,
+      overflow: TextOverflow.ellipsis,
       color: ColorsConst.grey,
       fontSize: size,
       fontWeight: FontWeight.w400,
