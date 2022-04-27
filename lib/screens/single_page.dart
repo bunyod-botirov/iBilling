@@ -23,7 +23,7 @@ class SinglePage extends StatelessWidget {
         ),
         actions: <Widget>[
           IconButton(
-            icon: SvgPicture.asset("assets/icons/bookmark_icon.svg"),
+            icon: SvgPicture.asset("assets/icons/bookmark_unselected.svg"),
             splashRadius: 20,
             onPressed: () {},
           ),
