@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ibilling/screens/bottom_navbar/bottom_navbar_cubit.dart';
-import 'package:ibilling/screens/bottom_navbar/bottom_navbar_state.dart';
 import 'package:ibilling/core/components/text_style_comp.dart';
 import 'package:ibilling/core/constants/colors_constant.dart';
 import 'package:ibilling/core/constants/size_constant.dart';
@@ -14,23 +11,10 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConst().init(context);
 
-    return BlocProvider(
-      create: (BuildContext context) => BottomNavBarCubit(),
-      child: BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
-        builder: (BuildContext context, Object? state) {
-          return myScaffold(context);
-        },
-      ),
-    );
-  }
-
-  Scaffold myScaffold(BuildContext context) {
     return Scaffold(
-      body: context
-          .watch<BottomNavBarCubit>()
-          .pages[context.watch<BottomNavBarCubit>().currentPage],
+      body: Scaffold(),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: context.watch<BottomNavBarCubit>().currentPage,
+        currentIndex: 0,
         type: BottomNavigationBarType.fixed,
         backgroundColor: ColorsConst.darkest,
         selectedItemColor: ColorsConst.white,
@@ -68,9 +52,7 @@ class BottomNavBar extends StatelessWidget {
             activeIcon: SvgPicture.asset("assets/icons/profile_selected.svg"),
           ),
         ],
-        onTap: (int index) {
-          context.read<BottomNavBarCubit>().changePage(index);
-        },
+        onTap: (int index) {},
       ),
     );
   }

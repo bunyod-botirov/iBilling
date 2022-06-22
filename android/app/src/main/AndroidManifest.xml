@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ibilling">
+    package="com.bunyod.ibilling">
    <application
         android:label="ibilling"
         android:name="${applicationName}"

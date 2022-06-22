@@ -1,4 +1,4 @@
-package com.example.ibilling
+package com.bunyod.ibilling
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ibilling/screens/bottom_navbar/bottom_navbar_view.dart';
-import 'package:ibilling/screens/invoice_page.dart';
-import 'package:ibilling/screens/new_contract_page.dart';
-import 'package:ibilling/screens/single_page.dart';
+import 'package:ibilling/views/bottom_navbar_view.dart';
+import 'package:ibilling/views/invoice_page.dart';
+import 'package:ibilling/views/new_contract_page.dart';
+import 'package:ibilling/views/single_page.dart';
 
 class AppRouter {
   static Route? onGenerateRoute(RouteSettings settings) {
