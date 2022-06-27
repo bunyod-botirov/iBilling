@@ -36,7 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.0
   calendar_agenda: ^0.0.2+3
-  provider: ^6.0.3
+  flutter_bloc: ^8.0.1
+  connectivity_plus: ^2.3.5
 
 dev_dependencies:
   flutter_test:

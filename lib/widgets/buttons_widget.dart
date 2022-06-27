@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ibilling/core/constants/colors_constant.dart';
+import 'package:ibilling/core/constants/colors/colors_constant.dart';
 
 class ButtonsW {
   static SizedBox green(

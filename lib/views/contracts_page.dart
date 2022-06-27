@@ -2,7 +2,7 @@ import 'package:calendar_agenda/calendar_agenda.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ibilling/core/components/text_style_comp.dart';
-import 'package:ibilling/core/constants/colors_constant.dart';
+import 'package:ibilling/core/constants/colors/colors_constant.dart';
 import 'package:ibilling/core/constants/padding_margin_const.dart';
 import 'package:ibilling/core/constants/size_constant.dart';
 

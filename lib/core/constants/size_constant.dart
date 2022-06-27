@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:ibilling/core/extensions/context_extension.dart';
 
 class SizeConst {
-  static MediaQueryData? _mediaQueryData;
   static double? _screenWidth;
   static double? _screenHeight;
 
   void init(BuildContext context) {
-    _mediaQueryData = MediaQuery.of(context);
-    _screenWidth = _mediaQueryData!.size.width;
-    _screenHeight = _mediaQueryData!.size.height;
+    _screenWidth = context.w;
+    _screenHeight = context.h;
   }
 
   static double getWidth(double inputWidth) {

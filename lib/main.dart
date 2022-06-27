@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ibilling/core/components/theme_comp.dart';
-import 'package:ibilling/router/router.dart';
+import 'package:ibilling/core/constants/texts/text_const.dart';
+import 'package:ibilling/router/routers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'iBilling',
-      debugShowCheckedModeBanner: false,
+      title: TextConst.appTitle,
       darkTheme: ThemeComp.darkTheme,
       themeMode: ThemeMode.dark,
-      onGenerateRoute: AppRouter.onGenerateRoute,
+      onGenerateRoute: Routes.instance.onGenerateRoute,
       initialRoute: "/bottom_navbar",
     );
   }

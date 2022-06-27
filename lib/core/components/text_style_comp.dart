@@ -1,5 +1,5 @@
 import 'package:flutter/painting.dart';
-import 'package:ibilling/core/constants/colors_constant.dart';
+import 'package:ibilling/core/constants/colors/colors_constant.dart';
 
 class TextStyleComp {
   static TextStyle regularStyle(double size) {

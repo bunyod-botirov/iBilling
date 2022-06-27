@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ibilling/core/components/text_style_comp.dart';
-import 'package:ibilling/core/constants/colors_constant.dart';
+import 'package:ibilling/core/constants/colors/colors_constant.dart';
 
 class ThemeComp {
   static ThemeData darkTheme = ThemeData(
