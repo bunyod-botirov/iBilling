@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ibilling/core/components/text_style_comp.dart';
+import 'package:ibilling/core/constants/texts/font_style_const.dart';
 
 class AppBarW {
   static AppBar appBar(String title) {
@@ -8,7 +8,7 @@ class AppBarW {
       leading: Image.asset("assets/images/temp.png"),
       title: Text(
         title,
-        style: TextStyleComp.mediumStyle(18),
+        style: FontStyleConst.instance.mediumStyle(18),
       ),
       actions: <Widget>[
         IconButton(

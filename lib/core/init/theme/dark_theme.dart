@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:ibilling/core/components/text_style_comp.dart';
-import 'package:ibilling/core/constants/colors/colors_constant.dart';
+import 'package:ibilling/core/constants/texts/font_style_const.dart';
+import 'package:ibilling/core/constants/colors/color_constant.dart';
 
-class ThemeComp {
-  static ThemeData darkTheme = ThemeData(
+class AppThemeDark {
+  static final AppThemeDark _instance = AppThemeDark._init();
+  static AppThemeDark get instance => _instance;
+  AppThemeDark._init();
+
+  final ThemeData darkTheme = ThemeData(
     fontFamily: 'Ubuntu',
-    scaffoldBackgroundColor: ColorsConst.black,
+    scaffoldBackgroundColor: ColorConst.instance.kBlack,
     primarySwatch: const MaterialColor(
       0xFF00A795,
       {
@@ -22,10 +26,10 @@ class ThemeComp {
       },
     ),
     appBarTheme: AppBarTheme(
-      backgroundColor: ColorsConst.darkest,
-      iconTheme: IconThemeData(color: ColorsConst.white),
-      actionsIconTheme: IconThemeData(color: ColorsConst.white),
-      titleTextStyle: TextStyleComp.mediumStyle(18),
+      backgroundColor: ColorConst.instance.kDarkest,
+      iconTheme: IconThemeData(color: ColorConst.instance.kWhite),
+      actionsIconTheme: IconThemeData(color: ColorConst.instance.kWhite),
+      titleTextStyle: FontStyleConst.instance.mediumStyle(18),
       titleSpacing: 0,
       elevation: 0,
     ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ibilling/core/constants/colors/colors_constant.dart';
+import 'package:ibilling/core/constants/colors/color_constant.dart';
 
 class ButtonsW {
   static SizedBox green(
@@ -9,13 +9,13 @@ class ButtonsW {
       height: height,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: ColorsConst.darkGreen.withOpacity(0.23),
+          primary: ColorConst.instance.kDarkGreen.withOpacity(0.23),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: ColorsConst.darkGreen,
+            color: ColorConst.instance.kDarkGreen,
             fontSize: 14,
             fontWeight: FontWeight.w700,
           ),
@@ -34,13 +34,13 @@ class ButtonsW {
       height: height,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: ColorsConst.darkGreen,
+          primary: ColorConst.instance.kDarkGreen,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: ColorsConst.white,
+            color: ColorConst.instance.kWhite,
             fontSize: 14,
             fontWeight: FontWeight.w700,
           ),
@@ -59,13 +59,13 @@ class ButtonsW {
       height: height,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: ColorsConst.red.withOpacity(0.23),
+          primary: ColorConst.instance.kRed.withOpacity(0.23),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: ColorsConst.red,
+            color: ColorConst.instance.kRed,
             fontSize: 14,
             fontWeight: FontWeight.w700,
           ),
@@ -84,13 +84,13 @@ class ButtonsW {
       height: height,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: ColorsConst.red,
+          primary: ColorConst.instance.kRed,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         ),
         child: Text(
           text,
           style: TextStyle(
-            color: ColorsConst.white,
+            color: ColorConst.instance.kWhite,
             fontSize: 14,
             fontWeight: FontWeight.w700,
           ),

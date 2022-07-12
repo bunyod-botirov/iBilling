@@ -1,3 +1,3 @@
 class TextConst {
-  static const String appTitle = "iBilling";
+  static const String APP_TITLE = "iBilling";
 }

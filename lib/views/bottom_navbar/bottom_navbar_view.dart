@@ -1,58 +1,93 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ibilling/core/components/text_style_comp.dart';
-import 'package:ibilling/core/constants/colors/colors_constant.dart';
-import 'package:ibilling/core/constants/size_constant.dart';
+import 'package:ibilling/core/base/base_view/base_view.dart';
+import 'package:ibilling/core/constants/texts/font_style_const.dart';
+import 'package:ibilling/core/constants/colors/color_constant.dart';
+import 'package:ibilling/core/constants/images/image_const.dart';
+import 'package:ibilling/core/extensions/bloc_extension.dart';
+import 'package:ibilling/views/bottom_navbar/bottom_navbar_cubit.dart';
+import 'package:ibilling/views/bottom_navbar/bottom_navbar_state.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    SizeConst().init(context);
+    return BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
+      builder: (BuildContext context, Object? state) {
+        return BaseView(
+          viewModal: BottomNavBar,
+          onPageBuilder: (BuildContext context, Object? widget) {
+            return scaffold(context);
+          },
+        );
+      },
+    );
+  }
 
+  Scaffold scaffold(BuildContext context) {
     return Scaffold(
-      body: Scaffold(),
+      body: context
+          .bottomNavBarCTStream.pages[context.bottomNavBarCTStream.currentPage],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
+        currentIndex: context.bottomNavBarCTStream.currentPage,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: ColorsConst.darkest,
-        selectedItemColor: ColorsConst.white,
-        selectedLabelStyle: TextStyleComp.boldStyle(10),
-        unselectedItemColor: const Color(0xFFA6A6A6),
-        unselectedLabelStyle: const TextStyle(
-          color: Color(0xFFA6A6A6),
-          fontSize: 10,
-          fontWeight: FontWeight.w500,
-        ),
+        backgroundColor: ColorConst.instance.kDarkest,
+        selectedItemColor: ColorConst.instance.kWhite,
+        selectedLabelStyle: FontStyleConst.instance.bottomBarAble,
+        unselectedItemColor: ColorConst.instance.kDarkGrey,
+        unselectedLabelStyle: FontStyleConst.instance.bottomBarDisable,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             label: "Contracts",
-            icon: SvgPicture.asset("assets/icons/contracts_unselected.svg"),
-            activeIcon: SvgPicture.asset("assets/icons/contracts_selected.svg"),
+            icon: SvgPicture.asset(
+              ImageConst.instance.toIcon("contracts_unselected"),
+            ),
+            activeIcon: SvgPicture.asset(
+              ImageConst.instance.toIcon("contracts_selected"),
+            ),
           ),
           BottomNavigationBarItem(
             label: "History",
-            icon: SvgPicture.asset("assets/icons/history_unselected.svg"),
-            activeIcon: SvgPicture.asset("assets/icons/history_selected.svg"),
+            icon: SvgPicture.asset(
+              ImageConst.instance.toIcon("history_unselected"),
+            ),
+            activeIcon: SvgPicture.asset(
+              ImageConst.instance.toIcon("history_selected"),
+            ),
           ),
           BottomNavigationBarItem(
             label: "New",
-            icon: SvgPicture.asset("assets/icons/new_unselected.svg"),
-            activeIcon: SvgPicture.asset("assets/icons/new_selected.svg"),
+            icon: SvgPicture.asset(
+              ImageConst.instance.toIcon("new_unselected"),
+            ),
+            activeIcon: SvgPicture.asset(
+              ImageConst.instance.toIcon("new_selected"),
+            ),
           ),
           BottomNavigationBarItem(
             label: "Saved",
-            icon: SvgPicture.asset("assets/icons/saved_unselected.svg"),
-            activeIcon: SvgPicture.asset("assets/icons/saved_selected.svg"),
+            icon: SvgPicture.asset(
+              ImageConst.instance.toIcon("saved_unselected"),
+            ),
+            activeIcon: SvgPicture.asset(
+              ImageConst.instance.toIcon("saved_selected"),
+            ),
           ),
           BottomNavigationBarItem(
             label: "Profile",
-            icon: SvgPicture.asset("assets/icons/profile_unselected.svg"),
-            activeIcon: SvgPicture.asset("assets/icons/profile_selected.svg"),
+            icon: SvgPicture.asset(
+              ImageConst.instance.toIcon("profile_unselected"),
+            ),
+            activeIcon: SvgPicture.asset(
+              ImageConst.instance.toIcon("profile_selected"),
+            ),
           ),
         ],
-        onTap: (int index) {},
+        onTap: (int index) {
+          context.bottomNavBarCT.changePage(index);
+        },
       ),
     );
   }

@@ -20,8 +20,8 @@ class NavigationService implements INavigationService {
   Future pushNamedRemoveUntil({required String routeName, Object? data}) async {
     return await navigatorKey.currentState!.pushNamedAndRemoveUntil(
       routeName,
-      (route) => false,
       arguments: data,
+      (Route route) => false,
     );
   }
 }
