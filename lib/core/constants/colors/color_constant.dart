@@ -18,7 +18,7 @@ class ColorConst {
   final Color kLightGreen = const Color(0xFF00A795);
   final Color kDarkGreen = const Color(0xFF008F7F);
   final Color kRed = const Color(0xFFFF426D);
-  
+
   final Color kStatusGreen = const Color(0xFF49B7A5);
   final Color kStatusYellow = const Color(0xFFFDAB2A);
   final Color kStatusRed = const Color(0xFFF85379);

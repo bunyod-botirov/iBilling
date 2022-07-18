@@ -6,6 +6,7 @@ import 'package:ibilling/core/constants/texts/font_style_const.dart';
 import 'package:ibilling/core/constants/colors/color_constant.dart';
 import 'package:ibilling/core/constants/images/image_const.dart';
 import 'package:ibilling/core/constants/sizes/padding_margin_const.dart';
+import 'package:ibilling/core/extensions/bloc_extension.dart';
 import 'package:ibilling/views/contracts/_widgets/contracts_calendar.dart';
 import 'package:ibilling/widgets/contracts_widget.dart';
 
@@ -59,7 +60,7 @@ class ContractsView extends StatelessWidget {
                           ),
                           child: Text(
                             "Contracts",
-                            style: FontStyleConst.instance.buttonText,
+                            style: FontStyleConst.instance.buttonText1,
                           ),
                           onPressed: () {},
                         ),
@@ -74,7 +75,7 @@ class ContractsView extends StatelessWidget {
                           ),
                           child: Text(
                             "Invoice",
-                            style: FontStyleConst.instance.buttonText,
+                            style: FontStyleConst.instance.buttonText1,
                           ),
                           onPressed: () {},
                         ),
@@ -89,14 +90,19 @@ class ContractsView extends StatelessWidget {
                       (BuildContext context, int index) {
                         return Column(
                           children: <Widget>[
-                            const ContractsW(
-                              contractNumber: 154,
-                              name: "Bunyod Botirov",
-                              amount: 1200000,
-                              lastInvoice: 156,
-                              invoiceNumber: 6,
-                              date: "31.01.2021",
-                              status: 0,
+                            InkWell(
+                              child: const ContractsW(
+                                contractNumber: 154,
+                                name: "Bunyod Botirov",
+                                amount: 1200000,
+                                lastInvoice: 156,
+                                invoiceNumber: 6,
+                                date: "31.01.2021",
+                                status: 0,
+                              ),
+                              onTap: () {
+                                context.bottomNavBarCT.changePage(5, context);
+                              },
                             ),
                             SizedBox(height: SizeConst.instance.hSmall),
                           ],

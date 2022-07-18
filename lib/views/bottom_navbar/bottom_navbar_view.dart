@@ -31,7 +31,7 @@ class BottomNavBar extends StatelessWidget {
       body: context
           .bottomNavBarCTStream.pages[context.bottomNavBarCTStream.currentPage],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: context.bottomNavBarCTStream.currentPage,
+        currentIndex: context.bottomNavBarCTStream.bottomIndex,
         type: BottomNavigationBarType.fixed,
         backgroundColor: ColorConst.instance.kDarkest,
         selectedItemColor: ColorConst.instance.kWhite,
@@ -86,7 +86,7 @@ class BottomNavBar extends StatelessWidget {
           ),
         ],
         onTap: (int index) {
-          context.bottomNavBarCT.changePage(index);
+          context.bottomNavBarCT.changePage(index, context);
         },
       ),
     );

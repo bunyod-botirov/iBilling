@@ -49,6 +49,7 @@ class FontStyleConst {
     fontWeight: FontWeight.w500,
   );
 
+  // ? Headline
   final TextStyle headline1 = TextStyle(
     color: ColorConst.instance.kWhite,
     fontSize: SizeConst.instance.fRegular,
@@ -57,14 +58,8 @@ class FontStyleConst {
 
   final TextStyle headline2 = TextStyle(
     color: ColorConst.instance.kWhite,
-    fontSize: SizeConst.instance.fRegular,
-    fontWeight: FontWeight.w500,
-  );
-
-  final TextStyle headline3 = TextStyle(
-    color: ColorConst.instance.kDarkGrey,
-    fontSize: SizeConst.instance.fRegular,
-    fontWeight: FontWeight.w400,
+    fontSize: SizeConst.instance.fMedium,
+    fontWeight: FontWeight.w700,
   );
 
   final TextStyle headline4 = TextStyle(
@@ -73,57 +68,43 @@ class FontStyleConst {
     fontWeight: FontWeight.w700,
   );
 
-  final TextStyle buttonText = TextStyle(
-    color: ColorConst.instance.kWhite,
-    fontSize: 15.sp,
+  final TextStyle headline5 = TextStyle(
+    color: ColorConst.instance.kDarkGrey,
+    fontSize: SizeConst.instance.fRegular,
     fontWeight: FontWeight.w500,
   );
 
-  TextStyle regularStyle(double size) {
-    return TextStyle(
-      color: ColorConst.instance.kWhite,
-      fontSize: size,
-      fontWeight: FontWeight.w400,
-    );
-  }
+  // ? buttonText
+  final TextStyle buttonText1 = TextStyle(
+    color: ColorConst.instance.kWhite,
+    fontSize: SizeConst.instance.fMedium,
+    fontWeight: FontWeight.w500,
+  );
 
-  TextStyle mediumStyle(double size) {
-    return TextStyle(
-      color: ColorConst.instance.kWhite,
-      fontSize: size,
-      fontWeight: FontWeight.w500,
-    );
-  }
+  // ? Title
+  final TextStyle title1 = TextStyle(
+    color: ColorConst.instance.kWhite,
+    fontSize: SizeConst.instance.fRegular,
+    fontWeight: FontWeight.w500,
+  );
 
-  TextStyle boldStyle(double size) {
-    return TextStyle(
-      color: ColorConst.instance.kWhite,
-      fontSize: size,
-      fontWeight: FontWeight.w700,
-    );
-  }
+  final TextStyle title2 = TextStyle(
+    color: ColorConst.instance.kLightGrey,
+    fontSize: SizeConst.instance.fRegular,
+    fontWeight: FontWeight.w500,
+  );
 
-  TextStyle regularStyleGrey(double size) {
-    return TextStyle(
-      color: ColorConst.instance.kDarkGrey,
-      fontSize: size,
-      fontWeight: FontWeight.w400,
-    );
-  }
+  // ? Body
+  final TextStyle body1 = TextStyle(
+    color: ColorConst.instance.kDarkGrey,
+    fontSize: SizeConst.instance.fRegular,
+    fontWeight: FontWeight.w400,
+  );
 
-  TextStyle mediumStyleGrey(double size) {
-    return TextStyle(
-      color: ColorConst.instance.kDarkGrey,
-      fontSize: size,
-      fontWeight: FontWeight.w500,
-    );
-  }
-
-  TextStyle boldStyleGrey(double size) {
-    return TextStyle(
-      color: ColorConst.instance.kDarkGrey,
-      fontSize: size,
-      fontWeight: FontWeight.w700,
-    );
-  }
+  // ? Custom
+  final TextStyle newContracts = TextStyle(
+    color: ColorConst.instance.kWhite.withOpacity(0.4),
+    fontSize: SizeConst.instance.fRegular,
+    fontWeight: FontWeight.w400,
+  );
 }

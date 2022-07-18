@@ -5,8 +5,8 @@ import 'package:ibilling/core/constants/navigation/navigation_const.dart';
 import 'package:ibilling/core/init/notifier/cubit_list.dart';
 import 'package:ibilling/core/init/theme/dark_theme.dart';
 import 'package:ibilling/core/constants/texts/text_const.dart';
+import 'package:ibilling/router/router/router.dart';
 import 'package:ibilling/router/routers.dart';
-import 'package:ibilling/views/bottom_navbar/bottom_navbar_cubit.dart';
 
 void main() {
   runApp(
@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: TextConst.APP_TITLE,
           darkTheme: AppThemeDark.instance.darkTheme,
-          
           themeMode: ThemeMode.dark,
+          navigatorKey: NavigationService.instance.navigatorKey,
           onGenerateRoute: Routes.instance.onGenerateRoute,
           initialRoute: NavigationConst.BOTTOM_NAV_BAR_VIEW,
         );

@@ -12,6 +12,12 @@ class PaddingMarginConst {
   final EdgeInsets vsMedium = EdgeInsets.symmetric(
     vertical: SizeConst.instance.hMedium,
   );
+  final EdgeInsets hsSmall = EdgeInsets.symmetric(
+    horizontal: SizeConst.instance.wSmall,
+  );
+  final EdgeInsets vsSmall = EdgeInsets.symmetric(
+    vertical: SizeConst.instance.hSmall,
+  );
   final EdgeInsets allMedium = EdgeInsets.all(
     SizeConst.instance.rMedium,
   );

@@ -6,9 +6,10 @@ class SizeConst {
   SizeConst._init();
 
   // Custom
-  final double rStatus = 8.r;
 
   // Heights
+  final double hMaxSmall1 = 6.h;
+  final double hMaxSmall2 = 8.h;
   final double hExtraSmall = 10.0.h;
   final double hSmall = 12.0.h;
   final double hRegular = 14.0.h;
@@ -17,6 +18,8 @@ class SizeConst {
   final double hExtraLarge = 20.0.h;
 
   // Widths
+  final double wMaxSmall1 = 6.w;
+  final double wMaxSmall2 = 8.w;
   final double wExtraSmall = 10.0.w;
   final double wSmall = 12.0.w;
   final double wRegular = 14.0.w;
@@ -25,6 +28,8 @@ class SizeConst {
   final double wExtraLarge = 20.0.w;
 
   // Radius
+  final double rMaxSmall1 = 6.r;
+  final double rMaxSmall2 = 8.r;
   final double rExtraSmall = 10.0.r;
   final double rSmall = 12.0.r;
   final double rRegular = 14.0.r;

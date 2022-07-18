@@ -7,6 +7,7 @@ import 'package:ibilling/core/constants/images/image_const.dart';
 import 'package:ibilling/core/constants/sizes/padding_margin_const.dart';
 import 'package:ibilling/core/constants/sizes/size_const.dart';
 import 'package:ibilling/core/constants/texts/font_style_const.dart';
+import 'package:ibilling/widgets/info_text_widget.dart';
 
 class ContractsW extends StatelessWidget {
   final int lastInvoice, invoiceNumber, contractNumber, status;
@@ -26,71 +27,43 @@ class ContractsW extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      child: Container(
-        height: 148.h,
-        padding: PaddingMarginConst.instance.allSmall,
-        decoration: DecorationContainer.instance.container,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                SvgPicture.asset(ImageConst.instance.paperIcon),
-                SizedBox(width: 6.w),
-                Text(
-                  "№ $contractNumber",
-                  style: FontStyleConst.instance.headline1,
-                ),
-                const Spacer(),
-                statusIdentifier(status),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Text("Fish:  ", style: FontStyleConst.instance.headline2),
-                Text(name, style: FontStyleConst.instance.headline3),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Text("Amount:  ", style: FontStyleConst.instance.headline2),
-                Text("$amount UZS", style: FontStyleConst.instance.headline3),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Text(
-                  "Last invoice:  ",
-                  style: FontStyleConst.instance.headline2,
-                ),
-                Text(
-                  "№ $lastInvoice",
-                  style: FontStyleConst.instance.headline3,
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Text(
-                  "Number of invoices:  ",
-                  style: FontStyleConst.instance.headline2,
-                ),
-                Text(
-                  invoiceNumber.toString(),
-                  style: FontStyleConst.instance.headline3,
-                ),
-                const Spacer(),
-                Text(
-                  date,
-                  style: FontStyleConst.instance.headline4,
-                ),
-              ],
-            ),
-          ],
-        ),
+    return Container(
+      height: 148.h,
+      padding: PaddingMarginConst.instance.allSmall,
+      decoration: DecorationContainer.instance.decoration1,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              SvgPicture.asset(ImageConst.instance.paperIcon),
+              SizedBox(width: 6.w),
+              Text(
+                "№ $contractNumber",
+                style: FontStyleConst.instance.headline1,
+              ),
+              const Spacer(),
+              statusIdentifier(status),
+            ],
+          ),
+          InfoTextW(title: "Fish:", content: name),
+          InfoTextW(title: "Amount:", content: "$amount UZS"),
+          InfoTextW(title: "Last invoice:", content: "№ $lastInvoice"),
+          Row(
+            children: <Widget>[
+              InfoTextW(
+                title: "Number of invoices:",
+                content: invoiceNumber.toString(),
+              ),
+              const Spacer(),
+              Text(
+                date,
+                style: FontStyleConst.instance.headline4,
+              ),
+            ],
+          ),
+        ],
       ),
-      onTap: () {},
     );
   }
 
@@ -102,7 +75,7 @@ class ContractsW extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: ColorConst.instance.kStatusGreen.withOpacity(0.15),
-          borderRadius: BorderRadius.circular(SizeConst.instance.rStatus),
+          borderRadius: BorderRadius.circular(SizeConst.instance.rMaxSmall2),
         ),
         child: Text(
           "Paid",
@@ -116,7 +89,7 @@ class ContractsW extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: ColorConst.instance.kStatusYellow.withOpacity(0.15),
-          borderRadius: BorderRadius.circular(SizeConst.instance.rStatus),
+          borderRadius: BorderRadius.circular(SizeConst.instance.rMaxSmall2),
         ),
         child: Text(
           "In process",
@@ -130,7 +103,7 @@ class ContractsW extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: ColorConst.instance.kRed.withOpacity(0.15),
-          borderRadius: BorderRadius.circular(SizeConst.instance.rStatus),
+          borderRadius: BorderRadius.circular(SizeConst.instance.rMaxSmall2),
         ),
         child: Text(
           "Rejected by Payme",
@@ -144,7 +117,7 @@ class ContractsW extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: ColorConst.instance.kStatusRed.withOpacity(0.15),
-          borderRadius: BorderRadius.circular(SizeConst.instance.rStatus),
+          borderRadius: BorderRadius.circular(SizeConst.instance.rMaxSmall2),
         ),
         child: Text(
           "Rejected by IQ",
@@ -158,11 +131,11 @@ class ContractsW extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: ColorConst.instance.kLightGrey.withOpacity(0.15),
-          borderRadius: BorderRadius.circular(SizeConst.instance.rStatus),
+          borderRadius: BorderRadius.circular(SizeConst.instance.rMaxSmall2),
         ),
         child: Text(
           "Null",
-          style: FontStyleConst.instance.headline3,
+          style: FontStyleConst.instance.body1,
         ),
       );
     }

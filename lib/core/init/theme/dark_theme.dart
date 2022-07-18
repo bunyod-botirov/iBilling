@@ -29,9 +29,10 @@ class AppThemeDark {
       backgroundColor: ColorConst.instance.kDarkest,
       iconTheme: IconThemeData(color: ColorConst.instance.kWhite),
       actionsIconTheme: IconThemeData(color: ColorConst.instance.kWhite),
-      titleTextStyle: FontStyleConst.instance.mediumStyle(18),
+      titleTextStyle: FontStyleConst.instance.appBar,
       titleSpacing: 0,
       elevation: 0,
     ),
+    // textTheme: TextTheme(),
   );
 }

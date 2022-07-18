@@ -19,4 +19,10 @@ class ImageConst {
   String get vLine => toIcon("v_line");
   String get searchIcon => toIcon("search_icon");
   String get paperIcon => toIcon("paper_icon");
+  String get paperIconBigger => toIcon("paper_icon_bigger");
+
+  String get invoiceIcon => toIcon("invoice_icon");
+  String get calendarIcon => toIcon("calendar_icon");
+  String get accountCircle => toIcon("account_circle");
+  String get bookmarkUnselected => toIcon("bookmark_unselected");
 }
