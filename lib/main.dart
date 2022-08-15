@@ -26,12 +26,13 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 815),
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: TextConst.APP_TITLE,
           darkTheme: AppThemeDark.instance.darkTheme,
           themeMode: ThemeMode.dark,
           navigatorKey: NavigationService.instance.navigatorKey,
           onGenerateRoute: Routes.instance.onGenerateRoute,
-          initialRoute: NavigationConst.BOTTOM_NAV_BAR_VIEW,
+          initialRoute: NavigationConst.SPLASH_SCREEN,
         );
       },
     );

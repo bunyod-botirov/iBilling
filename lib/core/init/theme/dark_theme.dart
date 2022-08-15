@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ibilling/core/constants/texts/font_style_const.dart';
 import 'package:ibilling/core/constants/colors/color_constant.dart';
 
@@ -26,13 +27,14 @@ class AppThemeDark {
       },
     ),
     appBarTheme: AppBarTheme(
-      backgroundColor: ColorConst.instance.kDarkest,
+      backgroundColor: Colors.transparent,
       iconTheme: IconThemeData(color: ColorConst.instance.kWhite),
       actionsIconTheme: IconThemeData(color: ColorConst.instance.kWhite),
       titleTextStyle: FontStyleConst.instance.appBar,
-      titleSpacing: 0,
+      titleSpacing: 24.w,
       elevation: 0,
     ),
+    
     // textTheme: TextTheme(),
   );
 }

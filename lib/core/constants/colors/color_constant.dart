@@ -8,6 +8,7 @@ class ColorConst {
   // Classic
   final Color kLightGrey = const Color(0xFFDADADA);
   final Color kDarkGrey = const Color(0xFF999999);
+  final Color kIntroGrey = const Color(0xFFF3F3F3);
   final Color kWhite = const Color(0xFFFFFFFF);
   final Color kBlack = const Color(0xFF000000);
   final Color kDark = const Color(0xFF2A2A2D);
@@ -18,6 +19,7 @@ class ColorConst {
   final Color kLightGreen = const Color(0xFF00A795);
   final Color kDarkGreen = const Color(0xFF008F7F);
   final Color kRed = const Color(0xFFFF426D);
+  final Color kIntro = const Color(0xFF7654FF);
 
   final Color kStatusGreen = const Color(0xFF49B7A5);
   final Color kStatusYellow = const Color(0xFFFDAB2A);

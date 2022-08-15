@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ibilling/core/constants/colors/color_constant.dart';
 import 'package:ibilling/core/constants/sizes/size_const.dart';
 
@@ -106,5 +105,60 @@ class FontStyleConst {
     color: ColorConst.instance.kWhite.withOpacity(0.4),
     fontSize: SizeConst.instance.fRegular,
     fontWeight: FontWeight.w400,
+  );
+
+  final TextStyle intro = TextStyle(
+    fontFamily: "Monda",
+    color: ColorConst.instance.kIntro,
+    fontSize: SizeConst.instance.fIntro,
+    fontWeight: FontWeight.w700,
+  );
+
+  final TextStyle introAppBar = TextStyle(
+    fontFamily: "Monda",
+    color: ColorConst.instance.kIntro,
+    fontSize: SizeConst.instance.fExtraLarge,
+    fontWeight: FontWeight.w700,
+  );
+
+  final TextStyle introTitle = TextStyle(
+    fontFamily: "Poppins",
+    color: ColorConst.instance.kBlack,
+    fontSize: SizeConst.instance.fExtraLarge,
+    fontWeight: FontWeight.w600,
+  );
+
+  final TextStyle introBody = TextStyle(
+    fontFamily: "Poppins",
+    color: ColorConst.instance.kBlack.withOpacity(0.5),
+    fontSize: SizeConst.instance.fRegular,
+    fontWeight: FontWeight.w400,
+  );
+
+  final TextStyle introButton = TextStyle(
+    fontFamily: "Poppins",
+    color: ColorConst.instance.kWhite,
+    fontSize: SizeConst.instance.fMedium,
+    fontWeight: FontWeight.w500,
+  );
+
+  final TextStyle introBottom1 = TextStyle(
+    fontFamily: "Poppins",
+    color: ColorConst.instance.kBlack,
+    fontSize: SizeConst.instance.fSmall,
+    fontWeight: FontWeight.w500,
+  );
+  final TextStyle introBottom2 = TextStyle(
+    fontFamily: "Poppins",
+    color: ColorConst.instance.kIntro,
+    fontSize: SizeConst.instance.fSmall,
+    fontWeight: FontWeight.w500,
+  );
+  final TextStyle introTextForm = TextStyle(
+    fontFamily: "Poppins",
+    color: ColorConst.instance.kBlack,
+    fontSize: SizeConst.instance.fRegular,
+    fontWeight: FontWeight.w400,
+    decoration: TextDecoration.none,
   );
 }

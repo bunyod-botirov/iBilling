@@ -42,46 +42,46 @@ class BottomNavBar extends StatelessWidget {
           BottomNavigationBarItem(
             label: "Contracts",
             icon: SvgPicture.asset(
-              ImageConst.instance.toIcon("contracts_unselected"),
+              ImageConst.instance.toSvg("contracts_unselected"),
             ),
             activeIcon: SvgPicture.asset(
-              ImageConst.instance.toIcon("contracts_selected"),
+              ImageConst.instance.toSvg("contracts_selected"),
             ),
           ),
           BottomNavigationBarItem(
             label: "History",
             icon: SvgPicture.asset(
-              ImageConst.instance.toIcon("history_unselected"),
+              ImageConst.instance.toSvg("history_unselected"),
             ),
             activeIcon: SvgPicture.asset(
-              ImageConst.instance.toIcon("history_selected"),
+              ImageConst.instance.toSvg("history_selected"),
             ),
           ),
           BottomNavigationBarItem(
             label: "New",
             icon: SvgPicture.asset(
-              ImageConst.instance.toIcon("new_unselected"),
+              ImageConst.instance.toSvg("new_unselected"),
             ),
             activeIcon: SvgPicture.asset(
-              ImageConst.instance.toIcon("new_selected"),
+              ImageConst.instance.toSvg("new_selected"),
             ),
           ),
           BottomNavigationBarItem(
             label: "Saved",
             icon: SvgPicture.asset(
-              ImageConst.instance.toIcon("saved_unselected"),
+              ImageConst.instance.toSvg("saved_unselected"),
             ),
             activeIcon: SvgPicture.asset(
-              ImageConst.instance.toIcon("saved_selected"),
+              ImageConst.instance.toSvg("saved_selected"),
             ),
           ),
           BottomNavigationBarItem(
             label: "Profile",
             icon: SvgPicture.asset(
-              ImageConst.instance.toIcon("profile_unselected"),
+              ImageConst.instance.toSvg("profile_unselected"),
             ),
             activeIcon: SvgPicture.asset(
-              ImageConst.instance.toIcon("profile_selected"),
+              ImageConst.instance.toSvg("profile_selected"),
             ),
           ),
         ],

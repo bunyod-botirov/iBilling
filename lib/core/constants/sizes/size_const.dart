@@ -6,6 +6,7 @@ class SizeConst {
   SizeConst._init();
 
   // Custom
+  final double fIntro = 40.0.sp;
 
   // Heights
   final double hMaxSmall1 = 6.h;
