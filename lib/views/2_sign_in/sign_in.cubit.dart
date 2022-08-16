@@ -16,7 +16,7 @@ class SignInCubit extends Cubit<SignInState> {
     emit(ChangeObsecureText(isObsecureText));
   }
 
-  void continueButtonPressed() {
+  void continueButtonPressable() {
     if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
       continueButton = true;
     } else {

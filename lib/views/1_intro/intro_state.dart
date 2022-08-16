@@ -15,6 +15,6 @@ class IntroComplete extends IntroState {
 }
 
 class ChangeTabPageIndex extends IntroState {
-  int index;
+  final int index;
   ChangeTabPageIndex(this.index);
 }

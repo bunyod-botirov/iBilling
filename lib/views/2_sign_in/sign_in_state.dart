@@ -15,11 +15,11 @@ class SignInComplete extends SignInState {
 }
 
 class ChangeObsecureText extends SignInState {
-  bool isObsecureText;
+  final bool isObsecureText;
   ChangeObsecureText(this.isObsecureText);
 }
 
 class ContinueButton extends SignInState {
-  bool continueButton;
+  final bool continueButton;
   ContinueButton(this.continueButton);
 }

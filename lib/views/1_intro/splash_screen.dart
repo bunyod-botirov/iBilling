@@ -10,7 +10,6 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: 1.Get Language
     // TODO: 2.Chack Token
     Future.delayed(
       const Duration(seconds: 3),

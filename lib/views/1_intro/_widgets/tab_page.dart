@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ibilling/core/constants/colors/color_constant.dart';
-import 'package:ibilling/core/constants/images/image_const.dart';
 import 'package:ibilling/core/constants/sizes/size_const.dart';
 import 'package:ibilling/core/constants/texts/font_style_const.dart';
 
-class WelcomeTabPage extends StatelessWidget {
-  const WelcomeTabPage({Key? key}) : super(key: key);
+class TabPage extends StatelessWidget {
+  final String imageName, title, subTitle;
+
+  const TabPage({
+    Key? key,
+    required this.imageName,
+    required this.title,
+    required this.subTitle,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +38,7 @@ class WelcomeTabPage extends StatelessWidget {
                 ),
                 Positioned(
                   child: Image.asset(
-                    ImageConst.instance.introWelcome,
+                    imageName,
                     width: 327.w,
                     height: 206.h,
                   ),
@@ -42,12 +48,12 @@ class WelcomeTabPage extends StatelessWidget {
           ),
           SizedBox(height: 28.h),
           Text(
-            "Welcome to IBilling",
+            title,
             style: FontStyleConst.instance.introTitle,
           ),
           SizedBox(height: SizeConst.instance.hMaxSmall2),
           Text(
-            "IBilling tool lets you store customer and prospect contact information, identify sales opportunities.",
+            subTitle,
             textAlign: TextAlign.center,
             style: FontStyleConst.instance.introBody,
           ),

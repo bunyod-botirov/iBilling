@@ -1,37 +1,36 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ibilling/core/constants/colors/color_constant.dart';
 import 'package:ibilling/core/constants/images/image_const.dart';
 import 'package:ibilling/core/constants/navigation/navigation_const.dart';
 import 'package:ibilling/core/constants/sizes/size_const.dart';
 import 'package:ibilling/core/constants/texts/font_style_const.dart';
 import 'package:ibilling/core/constants/texts/text_const.dart';
+import 'package:ibilling/core/extensions/bloc_extension.dart';
+import 'package:ibilling/core/extensions/string_extension.dart';
 import 'package:ibilling/router/router/router.dart';
-import 'package:ibilling/views/1_intro/_widgets/grow_tab_page.dart';
-import 'package:ibilling/views/1_intro/_widgets/search_tab_page.dart';
-import 'package:ibilling/views/1_intro/_widgets/welcome_tab_page.dart';
+import 'package:ibilling/views/1_intro/_widgets/language_bottom_sheet.dart';
+import 'package:ibilling/views/1_intro/_widgets/tab_page.dart';
 import 'package:ibilling/views/1_intro/intro_cubit.dart';
 import 'package:ibilling/views/1_intro/intro_state.dart';
 import 'package:ibilling/widgets/buttons/intro_button.dart';
+import 'package:ibilling/widgets/language_icon.dart';
 
 class IntroView extends StatelessWidget {
-  IntroView({Key? key}) : super(key: key);
-
-  TabController? tabController;
-  int tabPageIndex = 0;
+  const IntroView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<IntroCubit, IntroState>(
       builder: (BuildContext context, Object? state) {
-        return scaffold();
+        return scaffold(context);
       },
     );
   }
 
-  Scaffold scaffold() {
+  Scaffold scaffold(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConst.instance.kWhite,
       body: SafeArea(
@@ -46,20 +45,15 @@ class IntroView extends StatelessWidget {
                     TextConst.INTRO_TEXT,
                     style: FontStyleConst.instance.introAppBar,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      boxShadow: <BoxShadow>[
-                        BoxShadow(
-                          offset: Offset(2.w, 4.h),
-                          blurRadius: 25.r,
-                          spreadRadius: 0,
-                          color: ColorConst.instance.kBlack.withOpacity(0.05),
-                        ),
-                      ],
-                    ),
-                    child: SvgPicture.asset(
-                      ImageConst.instance.langUzb,
-                    ),
+                  LanguageIcon(
+                    iconName: context.locale.toString().contains("uz")
+                        ? ImageConst.instance.langUzb
+                        : context.locale.toString().contains("ru")
+                            ? ImageConst.instance.langRus
+                            : ImageConst.instance.langEng,
+                    onPressed: () {
+                      LagnuageModalSheet.instance.changeLang(context);
+                    },
                   ),
                 ],
               ),
@@ -72,14 +66,28 @@ class IntroView extends StatelessWidget {
                   height: 365.h,
                   child: PageView(
                     physics: const BouncingScrollPhysics(),
-                    children: const <Widget>[
-                      WelcomeTabPage(),
-                      SearchTabPage(),
-                      GrowTabPage(),
+                    children: <Widget>[
+                      TabPage(
+                        imageName: ImageConst.instance.introWelcome,
+                        title: "welcome".locale,
+                        subTitle:
+                            "IBilling tool lets you store customer and prospect contact information, identify sales opportunities.",
+                      ),
+                      TabPage(
+                        imageName: ImageConst.instance.introSearch,
+                        title: "Save and serch on IBilling",
+                        subTitle:
+                            "IBilling tool lets you store customer and prospect contact information, identify sales opportunities.",
+                      ),
+                      TabPage(
+                        imageName: ImageConst.instance.introGrow,
+                        title: "Grow on IBilling",
+                        subTitle:
+                            "IBilling tool lets you store customer and prospect contact information, identify sales opportunities.",
+                      ),
                     ],
                     onPageChanged: (int index) {
-                      tabPageIndex = index;
-                      // setState(() {});
+                      context.introCT.changeTab(index);
                     },
                   ),
                 ),
@@ -91,18 +99,24 @@ class IntroView extends StatelessWidget {
                     children: <Widget>[
                       Icon(
                         Icons.circle,
-                        color: ColorConst.instance.kLightGrey,
                         size: 8.r,
+                        color: context.introCTStream.tabPageIndex == 0
+                            ? ColorConst.instance.kIntro
+                            : ColorConst.instance.kLightGrey,
                       ),
                       Icon(
                         Icons.circle,
-                        color: ColorConst.instance.kIntro,
                         size: 8.r,
+                        color: context.introCTStream.tabPageIndex == 1
+                            ? ColorConst.instance.kIntro
+                            : ColorConst.instance.kLightGrey,
                       ),
                       Icon(
                         Icons.circle,
-                        color: ColorConst.instance.kLightGrey,
                         size: 8.r,
+                        color: context.introCTStream.tabPageIndex == 2
+                            ? ColorConst.instance.kIntro
+                            : ColorConst.instance.kLightGrey,
                       ),
                     ],
                   ),

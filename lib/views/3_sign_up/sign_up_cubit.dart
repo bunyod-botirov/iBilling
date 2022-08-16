@@ -7,7 +7,6 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   bool isObsecureText = true;
@@ -21,7 +20,6 @@ class SignUpCubit extends Cubit<SignUpState> {
   void continueButtonPressed() {
     if (nameController.text.isNotEmpty &&
         emailController.text.isNotEmpty &&
-        phoneController.text.isNotEmpty &&
         passwordController.text.isNotEmpty) {
       continueButton = true;
     } else {

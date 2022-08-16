@@ -10,6 +10,7 @@ import 'package:ibilling/router/router/router.dart';
 import 'package:ibilling/views/3_sign_up/sign_up_cubit.dart';
 import 'package:ibilling/views/3_sign_up/sign_up_state.dart';
 import 'package:ibilling/widgets/buttons/intro_button.dart';
+import 'package:ibilling/widgets/sign_text_field_widget.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({Key? key}) : super(key: key);
@@ -32,188 +33,41 @@ class SignUpView extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 SizedBox(height: 48.h),
-                Center(
-                  child: Text(
-                    "Create an account",
-                    style: TextStyle(
-                      fontFamily: "Poppins",
-                      color: ColorConst.instance.kIntro,
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
+                Text(
+                  "Create an account",
+                  style: TextStyle(
+                    fontFamily: "Poppins",
+                    color: ColorConst.instance.kIntro,
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(height: 32.h),
-                Text(
-                  "Full name",
-                  style: FontStyleConst.instance.introBody,
-                ),
-                SizedBox(height: 4.h),
-                SizedBox(
-                  width: 327.w,
-                  height: 44.h,
-                  child: TextFormField(
-                    controller: context.signUpCTStream.nameController,
-                    cursorColor: ColorConst.instance.kBlack,
-                    cursorHeight: SizeConst.instance.hExtraLarge,
-                    textAlignVertical: TextAlignVertical.center,
-                    style: FontStyleConst.instance.introTextForm,
-                    textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: SizeConst.instance.wMedium),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                        borderSide: BorderSide(
-                          color: ColorConst.instance.kDarkGrey,
-                          width: 1.2.w,
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                        borderSide: BorderSide(
-                          color: ColorConst.instance.kDarkGrey,
-                          width: 1.2.w,
-                        ),
-                      ),
-                    ),
-                    onChanged: (String v) {
-                      context.signUpCT.continueButtonPressed();
-                    },
-                  ),
+                SignTextFieldW(
+                  controller: context.signUpCTStream.nameController,
+                  title: "Full name",
+                  isLastField: false,
+                  onPressed: () => context.signUpCT.continueButtonPressed(),
                 ),
                 SizedBox(height: SizeConst.instance.hMedium),
-                Text(
-                  "Email",
-                  style: FontStyleConst.instance.introBody,
-                ),
-                SizedBox(height: 4.h),
-                SizedBox(
-                  width: 327.w,
-                  height: 44.h,
-                  child: TextFormField(
-                    controller: context.signUpCTStream.emailController,
-                    cursorColor: ColorConst.instance.kBlack,
-                    cursorHeight: SizeConst.instance.hExtraLarge,
-                    textAlignVertical: TextAlignVertical.center,
-                    style: FontStyleConst.instance.introTextForm,
-                    textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: SizeConst.instance.wMedium),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                        borderSide: BorderSide(
-                          color: ColorConst.instance.kDarkGrey,
-                          width: 1.2.w,
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                        borderSide: BorderSide(
-                          color: ColorConst.instance.kDarkGrey,
-                          width: 1.2.w,
-                        ),
-                      ),
-                    ),
-                    onChanged: (String v) {
-                      context.signUpCT.continueButtonPressed();
-                    },
-                  ),
+                SignTextFieldW(
+                  controller: context.signUpCTStream.emailController,
+                  title: "Email",
+                  isLastField: false,
+                  onPressed: () => context.signUpCT.continueButtonPressed(),
                 ),
                 SizedBox(height: SizeConst.instance.hMedium),
-                Text(
-                  "Phone number",
-                  style: FontStyleConst.instance.introBody,
-                ),
-                SizedBox(height: 4.h),
-                SizedBox(
-                  width: 327.w,
-                  height: 44.h,
-                  child: TextFormField(
-                    controller: context.signUpCTStream.phoneController,
-                    cursorColor: ColorConst.instance.kBlack,
-                    cursorHeight: SizeConst.instance.hExtraLarge,
-                    textAlignVertical: TextAlignVertical.center,
-                    style: FontStyleConst.instance.introTextForm,
-                    textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: SizeConst.instance.wMedium),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                        borderSide: BorderSide(
-                          color: ColorConst.instance.kDarkGrey,
-                          width: 1.2.w,
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                        borderSide: BorderSide(
-                          color: ColorConst.instance.kDarkGrey,
-                          width: 1.2.w,
-                        ),
-                      ),
-                    ),
-                    onChanged: (String v) {
-                      context.signUpCT.continueButtonPressed();
-                    },
-                  ),
-                ),
-                SizedBox(height: SizeConst.instance.hMedium),
-                Text(
-                  "Password",
-                  style: FontStyleConst.instance.introBody,
-                ),
-                SizedBox(height: 4.h),
-                SizedBox(
-                  width: 327.w,
-                  height: 44.h,
-                  child: TextFormField(
-                    controller: context.signUpCTStream.passwordController,
-                    style: FontStyleConst.instance.introTextForm,
-                    cursorHeight: SizeConst.instance.hExtraLarge,
-                    cursorColor: ColorConst.instance.kBlack,
-                    textAlignVertical: TextAlignVertical.center,
-                    obscureText: context.signUpCTStream.isObsecureText,
-                    textInputAction: TextInputAction.done,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: SizeConst.instance.wMedium),
-                      suffixIcon: InkWell(
-                        child: Icon(
-                          context.signUpCTStream.isObsecureText
-                              ? Icons.remove_red_eye
-                              : Icons.remove_red_eye_outlined,
-                          color: ColorConst.instance.kBlack,
-                          size: 20.r,
-                        ),
-                        onTap: () {
-                          context.signUpCT.changeIsObsecure();
-                        },
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                        borderSide: BorderSide(
-                          color: ColorConst.instance.kDarkGrey,
-                          width: 1.2.w,
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                        borderSide: BorderSide(
-                          color: ColorConst.instance.kDarkGrey,
-                          width: 1.2.w,
-                        ),
-                      ),
-                    ),
-                    onChanged: (String v) {
-                      context.signUpCT.continueButtonPressed();
-                    },
-                  ),
+                SignTextFieldW(
+                  controller: context.signUpCTStream.passwordController,
+                  title: "Password",
+                  isLastField: true,
+                  isObsecureText: context.signUpCTStream.isObsecureText,
+                  obsecureTextPressed: () =>
+                      context.signUpCT.changeIsObsecure(),
+                  onPressed: () => context.signUpCT.continueButtonPressed(),
                 ),
                 SizedBox(height: 28.h),
                 IntroButton(

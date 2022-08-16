@@ -39,6 +39,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   connectivity_plus: ^2.3.5
   flutter_screenutil: ^5.5.3+2
+  easy_localization: ^3.0.1
 
 dev_dependencies:
   flutter_test:
